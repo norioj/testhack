@@ -28,8 +28,7 @@ ImageLabel.Image = "http://www.roblox.com/asset/?id=10254370990"
 wait(10)
 
 game:GetService("Players").LocalPlayer.PlayerGui.TurtleHub:Destroy()
-end
-end)
+
 
 
 
