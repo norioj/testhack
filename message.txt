@@ -207,7 +207,7 @@ function scripthub()
         game:GetService("RunService").RenderStepped:connect(function()
             game.CoreGui.ChildAdded:connect(function(p1)
                 if p1:FindFirstChild("PropertiesFrame") or p1:FindFirstChild("ExplorerPanel") or p1:FindFirstChild("SaveInstance") then -- Dark Dex frames/children
-                    game.Players.LocalPlayer:Kick("\nMako Hub\nAnti Dark Dex")
+                    game.Players.LocalPlayer:Kick("\nRac Hub\nAnti Dark Dex")
                     wait(.5)
                     while true do end
                 end
