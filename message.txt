@@ -219,7 +219,7 @@ function scripthub()
         game.Players.LocalPlayer:Kick(msg)
     end
     function kickcash(msg)
-        game.Players.LocalPlayer:Kick("\nMako Hub ?\n"..msg)
+        game.Players.LocalPlayer:Kick("\nRac Hub ?\n"..msg)
         wait()
         function cash()
             return
@@ -246,7 +246,7 @@ function scripthub()
     
     function ntf(msg,Delay)
     game.StarterGui:SetCore("SendNotification",{
-    Title = "Mako Hub",
+    Title = "Rac Hub",
     Icon = "http://www.roblox.com/asset/?id=";
     Text = msg,
     Duration = Delay
@@ -259,7 +259,7 @@ function scripthub()
                 if v.Name == "DevConsoleMaster" then
                     v.Enabled = false
                     v:Destroy()
-                    game.Players.LocalPlayer:Kick("\nMako Hub\nAnti Dev Console")
+                    game.Players.LocalPlayer:Kick("\nRac Hub\nAnti Dev Console")
                     wait(.5)
                     while true do end
                 end
@@ -272,7 +272,7 @@ function scripthub()
     UIS.InputBegan:Connect(function(Input)
     if Input.KeyCode == Enum.KeyCode.Insert then
     keydown = true
-    game.Players.localPlayer:Kick("\Mako Hub\nAnti Console Synapse X")
+    game.Players.localPlayer:Kick("\Rac Hub\nAnti Console Synapse X")
     while true do
     end
     end
@@ -8576,4 +8576,4 @@ function scripthub()
             end
         end
     end
-   
+    
