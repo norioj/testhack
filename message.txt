@@ -282,16 +282,7 @@ end)
     end
     end)
     ---------------------------------------------------------------------------------------------
-   local luasql = require("luasql.mysql")
- local env = luasql.mysql()
 
--- Replace the placeholders with your actual database credentials
-local connection, err = env:connect("bloxfruit", "root", "", "localhost", 1234)
-
-if not connection then
-    print("Error connecting to the database:", err)
-    return
-end
 local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/' -- You will need this for encoding/decoding
 function base64encode(data)
     return ((data:gsub('.', function(x) 
@@ -321,7 +312,16 @@ function base64decode(data)
             return string.char(c)
     end))
 end
+   local luasql = require("luasql.mysql")
+ local env = luasql.mysql()
 
+-- Replace the placeholders with your actual database credentials
+local connection, err = env:connect("bloxfruit", "root", "", "localhost", 1234)
+if not connection then
+    print("Error connecting to the database:", err)
+    return
+end
+if connection then
 local requesthttps 
 if syn then
     requesthttps = syn.request
@@ -584,6 +584,8 @@ if getserver.StatusCode == 200 and gethwid.StatusCode == 200 then
         wait(math.random(1, 4))
         ntf("\nCorrect Key")
         print("[XENFER-WL] : Correct Key (3/3)")
+        return 
+        end
 end
 
 
