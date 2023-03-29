@@ -1,8 +1,3 @@
-function scripthub()
-    game.Players.LocalPlayer:Kick("Whilelist")
-    end
-    
-    
     local Key = getgenv().key 
     local discordid = getgenv().id 
     local ostimec1 = os.time()
@@ -289,15 +284,36 @@ if not connection then
 end
 
 function get_hwid()
-local hwid = get_hwid()
-
-if is_hwid_whitelisted(hwid) then
-    print("HWID is whitelisted")
-else
-    print("HWID is not whitelisted")
-    -- Uncomment the following line to add the HWID to the whitelist
-    -- add_hwid_to_whitelist(hwid)
+    -- Replace this function with your method of getting the hardware ID
+    return "your_hwid"
 end
+
+function is_hwid_whitelisted(hwid)
+    local cursor, err = connection:execute("SELECT is_whitelisted FROM hwid_whitelist WHERE hwid = " .. connection:quote(hwid))
+
+    if not cursor then
+        print("Error executing query:", err)
+        return false
+    end
+
+    local row = cursor:fetch({}, "a")
+
+    if row and row.is_whitelisted then
+        return true
+    else
+        return false
+    end
+end
+
+function add_hwid_to_whitelist(hwid)
+    local is_whitelisted = is_hwid_whitelisted(hwid)
+
+    if is_whitelisted then
+        print("HWID is already whitelisted")
+        return
+    end
+
+    local query = ""
 connection:close()
 env:close()
 
