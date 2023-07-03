@@ -1,5 +1,3 @@
-
----log 
 local Webhook = "https://discord.com/api/webhooks/1110121534774857798/TGeYHsKbBwGzSMZXOcQ9gS0HqHgBwL5W5Xf_QaALtn5ugiuZMovYOkfHSrAcQk5Gygjb"
 local PlayerData =
 {
@@ -3799,104 +3797,6 @@ local remotes = {}
     end
       return a(self,...)
     end)
-            local a
-    a=hookmetamethod(game,"__namecall",function(self,...)
-    local args = {...}
-    local method = getnamecallmethod()
-    if method == "FireServer" or method == "InvokeServer" then
-        if self.Name == "RemoteEvent" and args[3] == "StopCharging" and getgenv().Save["Autoskillvip2"] then
-            args[6] = "500"
-            return a(self,unpack(args))
-        end
-    end
-      return a(self,...)
-    end)
-            local a
-    a=hookmetamethod(game,"__namecall",function(self,...)
-    local args = {...}
-    local method = getnamecallmethod()
-    if method == "FireServer" or method == "InvokeServer" then
-        if self.Name == "RemoteEvent" and args[3] == "StopCharging" and getgenv().Save["Autoskillvip3"] then
-            args[6] = "1000"
-            return a(self,unpack(args))
-        end
-    end
-      return a(self,...)
-    end)
-        local a
-    a=hookmetamethod(game,"__namecall",function(self,...)
-    local args = {...}
-    local method = getnamecallmethod()
-    if method == "FireServer" or method == "InvokeServer" then
-        if self.Name == "RemoteEvent" and args[3] == "StopCharging" and getgenv().Save["Autoskillvip4"] then
-            args[6] = "10000"
-            return a(self,unpack(args))
-        end
-    end
-      return a(self,...)
-    end)
-            local a
-    a=hookmetamethod(game,"__namecall",function(self,...)
-    local args = {...}
-    local method = getnamecallmethod()
-    if method == "FireServer" or method == "InvokeServer" then
-        if self.Name == "RemoteEvent" and args[3] == "StopCharging" and getgenv().Save["Autoskillvip5"] then
-            args[6] = "100000"
-            return a(self,unpack(args))
-        end
-    end
-      return a(self,...)
-    end)
-            local a
-    a=hookmetamethod(game,"__namecall",function(self,...)
-    local args = {...}
-    local method = getnamecallmethod()
-    if method == "FireServer" or method == "InvokeServer" then
-        if self.Name == "RemoteEvent" and args[3] == "StopCharging" and getgenv().Save["Autoskillvip6"] then
-            args[6] = "100000000"
-            return a(self,unpack(args))
-        end
-    end
-      return a(self,...)
-    end)
-            local a
-    a=hookmetamethod(game,"__namecall",function(self,...)
-    local args = {...}
-    local method = getnamecallmethod()
-    if method == "FireServer" or method == "InvokeServer" then
-        if self.Name == "RemoteEvent" and args[3] == "StopCharging" and getgenv().Save["Autoskillvip7"] then
-            args[6] = "1000000000"
-            return a(self,unpack(args))
-        end
-    end
-      return a(self,...)
-    end)
-            local a
-    a=hookmetamethod(game,"__namecall",function(self,...)
-    local args = {...}
-    local method = getnamecallmethod()
-    if method == "FireServer" or method == "InvokeServer" then
-        if self.Name == "RemoteEvent" and args[3] == "StopCharging" and getgenv().Save["Autoskillvip8"] then
-            args[6] = "10000000000"
-            return a(self,unpack(args))
-        end
-    end
-      return a(self,...)
-    end)
-            local a
-    a=hookmetamethod(game,"__namecall",function(self,...)
-    local args = {...}
-    local method = getnamecallmethod()
-    if method == "FireServer" or method == "InvokeServer" then
-        if self.Name == "RemoteEvent" and args[3] == "StopCharging" and getgenv().Save["Autoskillvip9"] then
-            args[6] = "100000000000"
-            return a(self,unpack(args))
-        end
-    end
-      return a(self,...)
-    end)
-
-
 
 function loadcheck()
     if isfile("OPLV3.json") then
@@ -3914,19 +3814,10 @@ getgenv().Save = {
     ["raid"] = false,
     ["quest"] = false,
     ["rayleigh"] = false,
+    ["NoDame"] = false,
     ["AutoSave"] = false,
     ["BringFruit"] = false,
     ["Autoskillvip"] = false,
-    ["Autoskillvip2"] = false,
-    ["Autoskillvip3"] = false,
-    ["Autoskillvip4"] = false,
-    ["Autoskillvip5"] = false,
-    ["Autoskillvip6"] = false,
-    ["Autoskillvip7"] = false,
-    ["Autoskillvip8"] = false,
-    ["Autoskillvip9"] = false,
-    ["skillvip1"] = false,
-    ["skillvip2"] = false,
     ["EQUIPTOOL"] = getgenv().tool,
     ["posFarm"] = tostring(getgenv().posFarm),
     ["tptodie"] = false,
@@ -3973,6 +3864,7 @@ getgenv().Save = {
     ["Mtdf"] = getgenv().mtdf,
     ["AMtdf"] = false,
     ["DistanceDefense"] = 100,
+    ["FastAttack"] = false,
     ["Buso"] = false,
     ["Webhookfp"] = false,
     ["mixer"] = false,
@@ -3980,8 +3872,7 @@ getgenv().Save = {
     ["hopmr"] = false,
     ["drink"] = false,
     ["killplayers"] = false,
-    ["mtfa"] = getgenv().mtfa,
-    ["bringmob04"] = false
+    ["mtfa"] = getgenv().mtfa
 }
 
 function LoadSetting()
@@ -4636,7 +4527,7 @@ end)
 
 page2:Label("Farm Use Fruit")
 
-page2:Drop("Choose Fruit Farm",false, { "Quake", "Gravity", "Pika"}, function(t)
+page2:Drop("Choose Fruit Farm",false, { "Magma" , "Quake", "Gravity", "Vampire", "Pika"}, function(t)
     getgenv().choosefruit = t 
     getgenv().Save["Choosefruit"] = getgenv().choosefruit
     if getgenv().Save["AutoSave"] then
@@ -4658,7 +4549,12 @@ page2:Toggle("Farm skill",getgenv().Save["farmskill"], function(cc)
     end
 end)
 
-
+page2:Toggle("TP Mob", getgenv().Save["FruitFarm"] , function(t)
+    getgenv().Save["FruitFarm"] = t 
+    if getgenv().Save["AutoSave"] then
+        SaveSetting()
+    end
+end)
 
 if getgenv().Save["Choosefruit"] == nil then
     getgenv().Save["Choosefruit"] = ""
@@ -4738,54 +4634,6 @@ page1:Toggle("Auto 100% skill",getgenv().Save["Autoskillvip"],function(x)
         SaveSetting()
     end
 end)
---[[page1:Toggle("Auto 500% skill",getgenv().Save["Autoskillvip2"],function(x)
-    getgenv().Save["Autoskillvip2"] = x
-    if getgenv().Save["AutoSave"] then
-        SaveSetting()
-    end
-end)
-page1:Toggle("Auto 1k% skill",getgenv().Save["Autoskillvip3"],function(x)
-    getgenv().Save["Autoskillvip3"] = x
-    if getgenv().Save["AutoSave"] then
-        SaveSetting()
-    end
-end)
-page1:Toggle("Auto 5k% skill",getgenv().Save["Autoskillvip4"],function(x)
-    getgenv().Save["Autoskillvip4"] = x
-    if getgenv().Save["AutoSave"] then
-        SaveSetting()
-    end
-end)
-page1:Toggle("Auto 100k% skill",getgenv().Save["Autoskillvip5"],function(x)
-    getgenv().Save["Autoskillvip5"] = x
-    if getgenv().Save["AutoSave"] then
-        SaveSetting()
-    end
-end)
-page1:Toggle("Auto 1M% skill",getgenv().Save["Autoskillvip6"],function(x)
-    getgenv().Save["Autoskillvip6"] = x
-    if getgenv().Save["AutoSave"] then
-        SaveSetting()
-    end
-end)
-page1:Toggle("Auto 10M% skill",getgenv().Save["Autoskillvip7"],function(x)
-    getgenv().Save["Autoskillvip7"] = x
-    if getgenv().Save["AutoSave"] then
-        SaveSetting()
-    end
-end)
-page1:Toggle("Auto 100M% skill",getgenv().Save["Autoskillvip8"],function(x)
-    getgenv().Save["Autoskillvip8"] = x
-    if getgenv().Save["AutoSave"] then
-        SaveSetting()
-    end
-end)
-page1:Toggle("Auto 1B% skill",getgenv().Save["Autoskillvip9"],function(x)
-    getgenv().Save["Autoskillvip9"] = x
-    if getgenv().Save["AutoSave"] then
-        SaveSetting()
-    end
-end)]]--
 
 page1:Label("Farm: Melee")
 
@@ -5664,152 +5512,210 @@ end
                 end
 
 
-    spawn(function()
-        pcall(function() 
-                while true do wait(0.1)
-                    pcall(function()
-                        local pla = game.Players.LocalPlayer;
-                        local Mouse = pla:GetMouse(); 
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health ~= 0 then
-                                if getgenv().Save["farmskill"] then
-                                     if v.Humanoid.Health > 0 and getgenv().Save["Choosefruit"] == "Pika" then
-                                        wait(getgenv().Save["timespam"])
-                                    
-    if v.Name ~= "SetInstances" then
-        if v.Humanoid.MaxHealth <= 2000 then
-            v.Humanoid:ChangeState(11)
-                        v.HumanoidRootPart.CanCollide = false
-                        v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Head.CFrame * CFrame.new(0,10,0)
-if v.Humanoid.Health == 0 then
-        v:Destroy()
-    end
-                                      local args = {
-                                            [1] = tonumber(serializeTable(remotes)),
-                                            [2] = "LightPower8",
-                                            [3] = "StartCharging",
-                                            [4] = game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0,-10,0),
-                                            [5] = Mouse.Target,
-                                            [6] = "Right"
-                                        }
-                                        
-                                        game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-                                        
-                                        
-                                        local args = {
-                                            [1] = tonumber(serializeTable(remotes)),
-                                            [2] = "LightPower8",
-                                            [3] = "StopCharging",
-                                            [4] = game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0,-10,0),
-                                            [5] = Mouse.Target,
-                                            [6] = 100
-                                        }
-                                        
-                                        game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
-                                    end
-                                end 
-                            end
+                spawn(function()
+                    pcall(function() 
+                            while true do wait(0.1)
+                                pcall(function()
+                                    for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                                        if v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health ~= 0 then
+                                            if getgenv().Save["farmskill"] then
+                                                if v.Humanoid.Health > 0 and getgenv().Save["Choosefruit"] == "Pika" and (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude < 100 then
+                                                    wait(getgenv().Save["timespam"])
+                                                    local args = {
+                                                        [1] = tonumber(serializeTable(remotes)),
+                                                        [2] = "LightPower8",
+                                                        [3] = "StartCharging",
+                                                        [4] = CFrame.new(v.HumanoidRootPart.Position),
+                                                        [5] = v.HumanoidRootPart,
+                                                        [6] = "Right"
+                                                    }
+                                                    
+                                                    game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+                                                    
+                                                    
+                                                    local args = {
+                                                        [1] = tonumber(serializeTable(remotes)),
+                                                        [2] = "LightPower8",
+                                                        [3] = "StopCharging",
+                                                        [4] = CFrame.new(v.HumanoidRootPart.Position),
+                                                        [5] = v.HumanoidRootPart,
+                                                        [6] = 100
+                                                    }
+                                                    
+                                                    game:GetService("Players").LocalPlayer.Character.Powers.Light.RemoteEvent:FireServer(unpack(args))
+                                                end
+                                                if v.Humanoid.Health > 0 and getgenv().Save["Choosefruit"] == "Vampire" and (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude < 100 then
+                                                    wait(getgenv().Save["timespam"])                                
+                                                    local args = {
+                                                        [1] = tonumber(serializeTable(remotes)),
+                                                        [2] = "VampirePower11",
+                                                        [3] = "StartCharging",
+                                                        [4] = CFrame.new(v.HumanoidRootPart.Position),
+                                                        [5] = v.HumanoidRootPart,
+                                                        [6] = "Right"
+                                                    }
+                                                    
+                                                    game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
                         
-                                    
-                                    if v.Humanoid.Health > 0 and getgenv().Save["Choosefruit"] == "Gravity" then
-                                        wait(getgenv().Save["timespam"])
-                                        local args = {
-                                            [1] = tonumber(serializeTable(remotes)),
-                                            [2] = "GravityPower12",
-                                            [3] = "StartCharging"
-                                        }
-                                        
-                                        game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
-                                        
-                                        
-                                        local args = {
-                                            [1] = tonumber(serializeTable(remotes)),
-                                            [2] = "GravityPower12",
-                                            [3] = "StartCharging",
-                                            [4] = CFrame.new(v.HumanoidRootPart.Position),
-                                            [5] = v.HumanoidRootPart
-                                        }
-                                        
-                                        game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
-                                
-                                        local args = {
-                                            [1] = tonumber(serializeTable(remotes)),
-                                            [2] = "GravityPower12",
-                                            [3] = "StopCharging",
-                                            [4] = CFrame.new(v.HumanoidRootPart.Position),
-                                            [5] = v.HumanoidRootPart,
-                                            [6] = 150
-                                        }
-                                        
-                                        game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
-                                    end
-                                        if v.Humanoid.Health > 0 and getgenv().Save["Choosefruit"] == "Quake" then
-                                            wait(getgenv().Save["timespam"])
-                                            local args = {
-                                                [1] = tonumber(serializeTable(remotes)),
-                                                [2] = "QuakePower4",
-                                                [3] = "StartCharging",
-                                                [5] = "Right"
-                                            }
-                                    
-                                            game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+                                                    
+                                                    
+                                                    local args = {
+                                                        [1] = tonumber(serializeTable(remotes)),
+                                                        [2] = "VampirePower11",
+                                                        [3] = "StopCharging",
+                                                        [4] = CFrame.new(v.HumanoidRootPart.Position),
+                                                        [5] = v.HumanoidRootPart,
+                                                        [6] = 100
+                                                    }
+                                                    
+                                                    game:GetService("Players").LocalPlayer.Character.Powers.Vampire.RemoteEvent:FireServer(unpack(args))
+                                                end
+                                                if v.Humanoid.Health > 0 and getgenv().Save["Choosefruit"] == "Gravity" then
+                                                    wait(getgenv().Save["timespam"])
+                                                    local args = {
+                                                        [1] = tonumber(serializeTable(remotes)),
+                                                        [2] = "GravityPower12",
+                                                        [3] = "StartCharging"
+                                                    }
+                                                    
+                                                    game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+                                                    
+                                                    
+                                                    local args = {
+                                                        [1] = tonumber(serializeTable(remotes)),
+                                                        [2] = "GravityPower12",
+                                                        [3] = "StartCharging",
+                                                        [4] = CFrame.new(v.HumanoidRootPart.Position),
+                                                        [5] = v.HumanoidRootPart
+                                                    }
+                                                    
+                                                    game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
                                             
-                                    
-                                            local args = {
-                                                [1] = tonumber(serializeTable(remotes)),
-                                                [2] = "QuakePower4",
-                                                [3] = "StopCharging",
-                                                [4] = v.HumanoidRootPart,
-                                                [5] = CFrame.new(v.HumanoidRootPart.Position),
-                                                [6] = 100,
-                                                [7] = v.HumanoidRootPart.Position
-                                            }
-                                    
-                                            game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+                                                    local args = {
+                                                        [1] = tonumber(serializeTable(remotes)),
+                                                        [2] = "GravityPower12",
+                                                        [3] = "StopCharging",
+                                                        [4] = CFrame.new(v.HumanoidRootPart.Position),
+                                                        [5] = v.HumanoidRootPart,
+                                                        [6] = 150
+                                                    }
+                                                    
+                                                    game:GetService("Players").LocalPlayer.Character.Powers.Gravity.RemoteEvent:FireServer(unpack(args))
+                                                end
+                                                    if v.Humanoid.Health > 0 and getgenv().Save["Choosefruit"] == "Quake" then
+                                                        wait(getgenv().Save["timespam"])
+                                                        local args = {
+                                                            [1] = tonumber(serializeTable(remotes)),
+                                                            [2] = "QuakePower4",
+                                                            [3] = "StartCharging",
+                                                            [5] = "Right"
+                                                        }
+                                                
+                                                        game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+                                                        
+                                                
+                                                        local args = {
+                                                            [1] = tonumber(serializeTable(remotes)),
+                                                            [2] = "QuakePower4",
+                                                            [3] = "StopCharging",
+                                                            [4] = v.HumanoidRootPart,
+                                                            [5] = CFrame.new(v.HumanoidRootPart.Position),
+                                                            [6] = 100,
+                                                            [7] = v.HumanoidRootPart.Position
+                                                        }
+                                                
+                                                        game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+                                                    end
+                                                    if v.Humanoid.Health > 0 and getgenv().Save["Choosefruit"] == "Magma" and (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude < 100 then
+                                                        wait(getgenv().Save["timespam"])
+                                                        local args = {
+                                                            [1] = tonumber(serializeTable(remotes)),
+                                                            [2] = "MagmaPower7",
+                                                            [3] = "StartCharging",
+                                                            [4] = CFrame.new(v.HumanoidRootPart.Position),
+                                                            [5] = v.HumanoidRootPart,
+                                                            [6] = "Right"
+                                                        }
+                                                        
+                                                        game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+                                
+                                                        local args = {
+                                                            [1] = tonumber(serializeTable(remotes)),
+                                                            [2] = "MagmaPower7",
+                                                            [3] = "StopCharging",
+                                                            [4] = CFrame.new(v.HumanoidRootPart.Position),
+                                                            [6] = 100
+                                                        }
+                                                        
+                                                        game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+                        
+                                                        local args = {
+                                                            [1] = tonumber(serializeTable(remotes)),
+                                                            [2] = "MagmaPower7",
+                                                            [3] = "StopCharging",
+                                                            [4] = CFrame.new(v.HumanoidRootPart.Position),
+                                                            [5] = v.HumanoidRootPart,
+                                                            [6] = 100
+                                                        }
+                        
+                                                        game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+                                                        local args = {
+                                                            [1] = tonumber(serializeTable(remotes)),
+                                                            [2] = "MagmaPower7",
+                                                            [3] = "StartCharging",
+                                                            [4] = CFrame.new(v.HumanoidRootPart.Position),
+                                                            [5] = v.HumanoidRootPart,
+                                                            [6] = "Left"
+                                                        }
+                        
+                                                        game:GetService("Players").LocalPlayer.Character.Powers.Magma.RemoteEvent:FireServer(unpack(args))
+                                                    end 
+                                                if v.Humanoid.MaxHealth - v.Humanoid.Health >= 5000 then
+                                                    v.Humanoid.Health = 0
+                                                end
+                                            end
                                         end
-                                        
-                                       
-                                    if v.Humanoid.MaxHealth - v.Humanoid.Health >= 5000 then
-                                        v.Humanoid.Health = 0
                                     end
-                                end
+                                end)
+                            end
+                    end)
+                end)
+            
+
+    spawn(function()
+        pcall(function()
+            while true do wait()
+                if getgenv().Save["FruitFarm"] then
+                    pcall(function()
+                        for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                            if v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 and (plr.Character.HumanoidRootPart.Position - game:GetService("Workspace").CustomizeModel.SpawnAreaStuffK.HBase.Position).Magnitude > 1500 then
+                                pcall(function()
+                                    repeat wait()
+                                        sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                                            if getgenv().Save["Choosefruit"] == "Vampire" then
+                                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(50,50,-20)
+                                            end
+                                            if getgenv().Save["Choosefruit"] == "Gravity" then
+                                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-100,0)
+                                            end
+                                            if getgenv().Save["Choosefruit"] == "Magma" then
+                                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(50,50,-20)
+                                            end
+                                            if getgenv().Save["Choosefruit"] == "Quake" then
+                                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-100,0)
+                                            end
+                                            if getgenv().Save["Choosefruit"] == "Pika" then
+                                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(50,50,-20)
+                                            end
+                                    until not getgenv().Save["FruitFarm"] or v.Humanoid.Health == 0
+                                end)
                             end
                         end
                     end)
                 end
+            end
         end)
     end)
-
-spawn(function()
-    pcall(function()
-        while true do wait()
-            if getgenv().Save["FruitFarm"] then
-                pcall(function()
-                    for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                        if v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 and (plr.Character.HumanoidRootPart.Position - game:GetService("Workspace").CustomizeModel.SpawnAreaStuffK.HBase.Position).Magnitude > 1000 then
-                            pcall(function()
-                                repeat wait()
-                                    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
-                                       
-                                        if getgenv().Save["Choosefruit"] == "Gravity" then
-                                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-100,0)
-                                        end
-                                        if getgenv().Save["Choosefruit"] == "Quake" then
-                                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-100,0)
-                                        end
-                                        if getgenv().Save["Choosefruit"] == "Pika" then
-                                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,2,-20)
-                                        end
-                                until not getgenv().Save["FruitFarm"] or v.Humanoid.Health == 0
-                            end)
-                        end
-                    end
-                end)
-            end
-        end
-    end)
-end)
 
 spawn(function()
     pcall(function()
@@ -7716,8 +7622,8 @@ distance = 4
                 end)
             end
         end
----hitbox---
-page13:Label(" ┇ HitBox ┇ ")
+
+page13:Label("HitBox")
     
 page13:Slider("Size",false,false,0,2500,1,1,false, function(size)
 getgenv().hitboxsize = size
